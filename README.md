@@ -10,3 +10,4 @@ Built with:
 
 
 This project is deployed to heroku.
+https://printshop3d.herokuapp.com/blog
