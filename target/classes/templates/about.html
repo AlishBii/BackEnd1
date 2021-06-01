@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}">Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882');
+        }
+        .bbb{
+            margin-bottom: 470px;
+        }
+    </style>
+</head>
+<body class="text-light bg-dark">
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5">
+    <h1 th:text="${title }"></h1>
+    <p class="text-light bg-dark">Here you can send parameters of your figure, provide a .stl file and place your order to be printed.</p>
+    <p class="w-75 text-light bg-dark ">After your order is placed we will contact by telephone and discuss your project, delivery time, if it is printable or not, how much the cost is. We will inform you as soon as your order is printed out.</p>
+    <p class="bbb"><a href="swagger-ui.html">Api Documentation</a></p>
+    <footer th:insert="blocks/footer :: footer"></footer>
+</div>
+
+</body>
+</html>

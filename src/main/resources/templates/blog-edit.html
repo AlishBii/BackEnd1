@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882');
+        }
+    </style>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="text-light">
+<div class="container mt-5 mb-5">
+    <h1>Edit</h1>
+
+    <div th:each="el : ${post}">
+        <form method="post">
+            <input type="text" th:value="${el.title}" name="title" placeholder="Insert the name of the drug" class="form-control"><br>
+            <textarea name="description" placeholder="Type a description" class="form-control" th:text="${el.description}"/><br>
+            <textarea name="imageurl" placeholder="URL of the image" class="form-control" th:text="${el.imagelink}"/><br>
+            <input type="text" th:value="${el.color}" name="color" placeholder="Provide a hexadecimal code" class="form-control"><br>
+            <input type="text" th:value = "${el.material}" name="material" placeholder="pla, abs or other" class="form-control"><br>
+            <input type="text" th:value = "${el.size}" name="parameters" placeholder="20х20х22 is max" class="form-control"><br>
+            <input type="text" th:value = "${el.clientContact}" name="phoneNumber" placeholder="Your phone number" class="form-control"><br>
+            <button type="submit" class="btn btn-info">Update</button>
+        </form>
+    </div>
+</div>
+</div>
+</body>
+<footer th:insert="blocks/footer :: footer"></footer>
+</html>

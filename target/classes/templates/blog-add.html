@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882');
+        }
+    </style>
+</head>
+<body class="text-light bg-dark">
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5 mb-5 w-25">
+    <h1>New order</h1>
+    <form action="/blog/add" method="post">
+        <input type="text" name="title" placeholder="Name of your figure" class="form-control "><br>
+        <textarea name="imagelink" placeholder="Image url" class="form-control "></textarea><br>
+        <input type="text" name="color" placeholder="Provide a hexadecimal code" class="form-control "><br>
+        <input type="text" name="material" placeholder="pla, abs or other" class="form-control "><br>
+        <input type="text" name="size" placeholder="size in mm" class="form-control "><br>
+        <textarea name="description" placeholder="Type a description" class="form-control "></textarea><br>
+        <input type="text" name="clientContact" placeholder="Your contacts" class="form-control "><br>
+
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+</div>
+</body>
+<footer th:insert="blocks/footer :: footer"></footer>
+</html>

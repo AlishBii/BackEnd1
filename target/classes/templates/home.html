@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}">Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882');
+        }
+        .float-container {
+            border: 3px solid #fff;
+            padding: 20px;
+        }
+
+        .float-child {
+            width: 50%;
+            padding: 20px;
+            border: 3px solid #fff;
+        }
+    </style>
+</head>
+
+
+<body class="text-light bg-dark">
+    <header th:insert="blocks/header :: header"></header>
+
+    <main class="container">
+        <div class="w-50 p-3">
+            <h1>3D Printing on Demand</h1>
+            <p class="w-50">Create and customize. Streamline and save. Break down design barriers and
+                scale your business with manufacturing on request.</p>
+            <button class="btn btn-danger">Make an order</button>
+            <button class="btn btn-light">Contact Sales</button>
+        </div>
+
+            <h3 class="mb-5 mt-5">Why 3D Printing?</h3>
+
+            <div class="float-container w-25 m-5">
+                <h4>Reduce Assembly Time</h4>
+                <p>Don’t waste time putting products together! Rely on 3D printing
+                    to make complex geometries that can be printed as one piece—or consolidated in one build.</p>
+            </div>
+
+            <div class="float-child w-25 m-5">
+                <h4>Fast Turnaround</h4>
+                <p>Working on a project for a customer that has to be just right? Get models back fast, and 3D
+                    print new iterations, if needed, for final feedback and production.</p>
+            </div>
+            <div class="float-child w-25 m-5">
+                <h4>Reliable Quality</h4>
+                <p>Proprietary processes, expert 3D printing operators, and inspections are our secrets to delivering
+                    exceptional, quality products every time.</p>
+            </div>
+        <div class="d-flex justify-content-center col-6 col-md mb-5">
+            <h5 class="mr-4">Contacts:</h5>
+            <ul class="list-unstyled text-small">
+                <li><p><a href="https://t.me/dsrvptxr">  Telegram</a></p></li>
+                <li><p>  E-mail: tilek.kenzhaev@iaau.edu.kg</p></li>
+                <li><a class="link-secondary" href="https://github.com/dsrvptxr">  GitHub</a> </li>
+            </ul>
+        </div>
+        <!--<footer th:insert="blocks/footer :: footer"></footer>-->
+    </main>
+</body>
+</html>

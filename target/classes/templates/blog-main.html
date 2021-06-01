@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog of Site</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882');
+        }
+        .float-container {
+            border: 3px solid #fff;
+            padding: 20px;
+        }
+        input.transparent-input{
+            background-color:transparent !important;
+        }
+        .blog{
+            background:rgba(255,255,255,.2);
+        }
+        .navbar{
+            position: fixed;
+        }
+    </style>
+</head>
+<body class="text-light bg-dark">
+<header th:insert="blocks/header :: header"></header>
+<div class="container ">
+    <div class="row pt-1">
+        <div class="col-sm-12 mb-3 mt-5">
+            <input class="hover-bg-dark-yellow form-control me-2 transparent-input" id="txtSearch" onkeyup="search()"  type="text" name="keyword" placeholder="Search" aria-label="Search">
+        </div>
+    </div>
+</div>
+
+<section class="jumbotron text-center bg-dark">
+    <div class="container">
+        <h1 class="jumbotron-heading">Discover your 3D printing application</h1>
+        <p class="lead text-muted">3D printing applications are numerous and all sectors can benefit from its advantages for their proof of concept, prototyping, production or tooling processes. Get inspired by all the benefits of 3D printing!</p>
+        <p>
+            <a href="/blog/add" class="btn btn-primary my-2">Add your order</a>
+            <a href="/about" class="btn btn-secondary my-2">About</a>
+        </p>
+    </div>
+</section>
+<!--<div class="container">
+    <div class="container mt-5">
+        &lt;!&ndash;<h1>Orders</h1>&ndash;&gt;
+        <div class="m-5 row row-cols-1 row-cols-sm-2 row-cols-md-4 row-col-lg-5" id="myItemss">
+            <div th:each="el : ${orders}" class="blog alert alert-warn m-3 float-container">
+                <div class="blog-body">
+                    <img th:src="${el.imagePath}" class="bd-placeholder-img card-img-top" />
+                    <h3 th:text="${el.title}" class="blog-title"></h3>
+                    <p th:text="${el.phoneNumber}"></p>
+                    <a th:href="'/blog/' + ${el.id}" class="btn btn-warning">Details</a>
+                </div>
+            </div>
+        </div>
+        <footer th:insert="blocks/footer :: footer"></footer>
+    </div>
+</div>-->
+<!--<div class="container mt-5">
+
+    <div class="m-5 row row-cols-1 row-cols-sm-2 row-cols-md-4 row-col-lg-5 " id="myItems">
+        <div th:each="el : ${orders}" class="card ">
+            <div class="col  bg-dark">
+                <div class="card-body">
+                    <h3 th:text="${el.title}" class="blog-title"></h3>
+                    <img th:src="${el.imagelink}" class="bd-placeholder-img card-img-top m-1" />
+                    <p th:text="${el.clientContact}"></p>
+                    <a th:href="'/blog/' + ${el.id}" class="btn btn-warning">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="container">
+    <div class="container mt-5">
+        <!--<h1>Orders</h1>-->
+        <div class="m-5 row row-cols-1 row-cols-sm-2 row-cols-md-3 row-col-lg-5" id="myItemss">
+            <div th:each="el : ${orders}" class="blog alert alert-warn m-3 float-container">
+                <div class="blog-body">
+                    <img th:src="${el.imagelink}" class="bd-placeholder-img card-img-top" />
+                    <h3 th:text="${el.title}" class="blog-title"></h3>
+                    <p th:text="${el.clientContact}"></p>
+                    <a th:href="'/blog/' + ${el.id}" class="btn btn-warning">Details</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<footer th:insert="blocks/footer :: footer" class="footer"></footer>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+
+<script>
+    function search() {
+        var input, filter, orders, orderContainer, title, i;
+        input = document.getElementById("txtSearch");
+        filter = input.value.toUpperCase();
+        orderContainer = document.getElementById("myItems");
+        orders = orderContainer.getElementsByClassName("blog");
+        for (i = 0; i < orders.length; i++) {
+            title = orders[i].querySelector(".blog-body h3.blog-title");
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                orders[i].style.display = "";
+            } else {
+                orders[i].style.display = "none";
+            }
+        }
+    }
+</script>
+</body>
+</html>

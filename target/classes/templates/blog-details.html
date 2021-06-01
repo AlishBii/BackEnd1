@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog of Site</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v462-n-130-textureidea_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=9465282a2b0a375f4f5b120d7bbad882');
+        }
+        .float-container {
+            border: 3px solid #fff;
+            padding: 20px;
+        }
+
+        .ell{
+            background:rgba(255,255,255,.2);
+        }
+    </style>
+</head>
+<body class="text-light bg-dark">
+<header th:insert="blocks/header :: header"></header>
+<div class="album">
+    <div class="container w-25 mt-5">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
+            <div class="col">
+                <div th:each="el : ${order}" class="alert-warn mt-2 float-container ell">
+                    <img th:src="${el.imagelink}" class="bd-placeholder-img card-img-top"  height=100%/>
+                    <h1 th:text="${el.title}"></h1>
+                    <p th:text="${el.description}"></p>
+                    <p th:text="${el.color}"></p>
+                    <p th:text="${el.material}"></p>
+                    <p th:text="${el.size}"></p>
+                    <p th:text="${el.clientContact}"></p>
+
+                    <!--<a th:href="'/blog/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a>-->
+                    <form th:action="'/blog/' + ${el.id} + '/remove'" method="post">
+                        <button class="btn btn-warning mt-2" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div class="container w-25 mt-5">
+    <div th:each="el : ${order}" class="alert alert-warn mt-2 float-container">
+        <img th:src="${el.imagePath}" class="bd-placeholder-img card-img-top"  height=100%/>
+        <h1 th:text="${el.title}"></h1>
+        <p th:text="${el.description}"></p>
+        <p th:text="${el.color}"></p>
+        <p th:text="${el.material}"></p>
+        <p th:text="${el.size}"></p>
+        <p th:text="${el.clientContact}"></p>
+
+        <a th:href="'/blog/' + ${el.id} + '/edit'" class="btn btn-warning">Edit</a>
+        <form th:action="'/blog/' + ${el.id} + '/remove'" method="post">
+            <button class="btn btn-warning mt-2" type="submit">Delete</button>
+        </form>
+    </div>
+
+</div>-->
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>
